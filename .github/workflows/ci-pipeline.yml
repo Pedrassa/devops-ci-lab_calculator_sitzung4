@@ -1,18 +1,18 @@
 name: Python CI Pipeline
-# Trigger the pipeline on push to the main branch
 
+# Trigger the pipeline on push to the main branch
 on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+  branches: [ "main" ]
 
 jobs:
+
   build-and-test:
     runs-on: ubuntu-latest
-    
-    steps:
-    
+
+  steps:
     # Step 1: Get the code from the repo
     - name: Checkout Code
       uses: actions/checkout@v4
@@ -31,5 +31,5 @@ jobs:
 
     # Step 4: Run the test suite (The "Test" phase)
     - name: Run Tests with Pytest
-      run: |
-        pytest -s # Added '-s' to show print statements
+    run: |
+      pytest -s # Added '-s' to show print statements
